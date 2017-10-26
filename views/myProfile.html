@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人设置</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >个人设置</div>
+	</header>
+	<div class="main">
+		<div class="head-portrait">
+			<span class="title">头像</span>
+			<img id="avatarImg" src="../style/img/photo2.png" alt="">
+			<span class="listarrow icon-backicon rotate180"></span>
+			<input type="file" accept="image/*" capture="camera" @change="onFileChange(this.files)" style="display: none;">
+		</div>
+
+		<a class="head-portrait" href="myProfile-phone.html">
+			<span class="title">修改手机号</span>
+			<span class="listarrow  icon-backicon rotate180"></span>
+		</a>
+
+	</div>
+</body>
+</html>

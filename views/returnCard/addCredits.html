@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"添加信用卡"})
+<body>
+	@@include('../../include/head.html',{"title":"添加信用卡"})
+	<section class="card_content">
+		<div class="card_input_div">
+			<div class="card_input_title">信用卡号码：</div>
+			<input type="text" class="card_input_control" placeholder="请输入">
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">开户银行：</div>
+			<input type="text" class="card_input_control deposit-hook" value="开户银行" readonly />
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">持卡人姓名：</div>
+			<input type="text" class="card_input_control" placeholder="请输入持卡人姓名">
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">账单日：</div>
+			<input type="text" class="card_input_control card_input_day" placeholder="输入日期">日
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">还款日：</div>
+			<input type="text" class="card_input_control card_input_day" onchange="isFill()" placeholder="输入日期">日
+		</div>
+		<div class="card_btn_block ">+ 添加新卡</div>
+	</section>
+
+	<!--搜索框-->
+	<section class="search-wrapper" >
+		<header class="c-header">
+			<a class="c-back fc61 fs20"
+			   onclick="setDisplay('.search-wrapper','hidden');"><i class="icon-backicon"></i></a>
+			<div class="search-box-input" >
+				<input type="text"  class="search-input" placeholder="输入银行名称" />
+			</div>
+			<div class="c-head-right fs14fc94">搜索</div>
+		</header>
+		<div class="notice">迷糊匹配，如“工商、农业、建设”银行等……</div>
+		<ul class="search-box" >
+			<li class="result-item" >bankName</li>
+			<li class="result-item" >bankName</li>
+			<li class="result-item" >bankName</li>
+		</ul>
+	</section>
+	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script>
+		function isFill(){
+		  inputCtr = $('.card_input_control');
+		  console.dir(inputCtr.length);
+		  for( let i=0,len=inputCtr.length; i< len; i++){
+			 if($(inputCtr[i]).val() == ""){
+			   console.log($(inputCtr[i]).val())
+			   $('.card_btn_block').removeClass('yellow')
+			   alert('请填充完整');
+			   break;
+			 }else{
+				$('.card_btn_block').addClass('yellow')
+			 }
+		  }
+		}
+		/*开户银行*/
+		$('.deposit-hook').click(function () {
+		  setDisplay('.search-wrapper','show');
+		});
+		function setDisplay(obj,type){
+
+		  var $obj = $(obj);
+		  console.log($obj);
+		  console.log($($obj));
+		  if(type =='show'){
+			$obj.css('display','block');
+			return;
+		  }
+		  if(type =='hidden'){
+			$obj.css('display','none');
+			return;
+		  }
+		}
+	</script>
+</body>
+</html>

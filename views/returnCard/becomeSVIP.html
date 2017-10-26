@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"成为SVIP"})
+<body>
+	<section class="bg-white">
+		@@include('../../include/head.html',{"title":"成为SVIP"})
+		<section class="card_be_vip">
+			<img src="../../style/img/svipcard2.png" alt="">
+		</section>
+		<section class="card_open_div">
+			<ul class="card_be_title">
+				<li class="card_open_title active">实体卡开通</li>
+				<li class="card_open_title">线上开通</li>
+			</ul>
+			<div class="card_be_content card_content">
+				<div class="card_open_child ">
+					<div class="card_input_div">
+						<div class="card_input_title">实体卡密码：</div>
+						<input type="text" class="card_input_control" placeholder="请刮开密码并输入">
+					</div>
+					<div class="card_input_div">
+						<input type="checkbox" class="check_read" checked />
+						<label class="check_label">我已经 <a href="javascript;" class="font-blue">阅读使用守则</a> </label>
+					</div>
+					<div class="card_btn_block yellow">开通</div>
+				</div>
+				<div class="card_open_child displaynone">
+					<div class="card_input_div">
+						<div class="card_input_title">支付金额：<span class="font-ora">198元</span></div>
+					</div>
+					<div class="card_input_div">
+						<div class="card_input_title">选择支付方式：</div>
+						<input type="radio" class="displaynone" id="check_wx" name="check_pay">
+						<label for="check_wx" class="check_wx"></label>
+						<input type="radio" class="displaynone" id="check_zfb" name="check_pay">
+						<label for="check_zfb" class="check_zfb"></label>
+					</div>
+					<div class="card_input_div">
+						<input type="checkbox" class="check_read" checked />
+						<label class="check_label">我已经 <a href="javascript;" class="font-blue">阅读使用守则</a> </label>
+					</div>
+					<div class="card_btn_block yellow">开通</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../../style/js/util.js"></script>
+	<script>
+		tab('.card_be_title','.card_be_content','active')
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"定制计划"})
+<body>
+	@@include('../../include/head.html',{"title":"定制计划"})
+	<section class="card_content">
+		<div class="card_input_div">
+			<div class="card_input_title">还款天数：</div>
+			<div class="card_radio_btn">
+				<input type="radio" id="payDays1" checked name="payDays"/>
+				<label for="payDays1">5天</label>
+				<input type="radio" id="payDays2" name="payDays"/>
+				<label for="payDays2">10天</label>
+				<input type="radio" id="payDays3" name="payDays"/>
+				<label for="payDays3">15天</label>
+				<input type="radio" id="payDays4" name="payDays"/>
+				<label for="payDays4">20天</label>
+			</div>
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">还款金额：</div>
+			<input type="text" class="card_input_control" placeholder="请输入还款金额">
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">还款次数：</div>
+			<div class="card_radio_btn">
+				<input type="radio" id="payNums1" checked name="payNums"/>
+				<label for="payNums1">5天</label>
+				<input type="radio" id="payNums2" name="payNums"/>
+				<label for="payNums2">10天</label>
+				<input type="radio" id="payNums3" name="payNums"/>
+				<label for="payNums3">15天</label>
+				<input type="radio" id="payNums4" name="payNums"/>
+				<label for="payNums4">20天</label>
+			</div>
+		</div>
+		<div class="card_input_div card_input_hook">
+		</div>
+		<a class="card_btn_block yellow" href="pay.html">下一步</a>
+	</section>
+	<script type="text/html" id="plan">
+		<div class="card_input_title">还款本金：500元</div>
+		<div class="credits_infos_schedule">
+			{{ if judge}}
+			<span>日程已生成  <a href="./scheduleDetail.html" class="icon-arrow-detail">查看详情</a></span>
+			<a class="icon-arrow-restart ">重新生成</a>
+			{{else}}
+			<a class="icon-arrow-detail">生成新的日程</a>
+			{{/if}}
+		</div>
+	</script>
+	<script src="../../style/js/template-web.js"></script>
+	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script>
+	  var data ={
+		judge:false,//false 未生成, true 已生成
+	  }
+	  var planhtml = template('plan',data);
+	  $('.card_input_hook').html(planhtml);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<title>扫码支付</title>
+</head>
+<body>
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >扫码支付</div>
+		<div class="c-head-right">用户指南</div>
+	</header>
+	<section class="content-wrapper">
+		<div class="inner-content weixin-content">
+			<div class="pay-title weixin-title">
+				微信小额D0实时到账
+			</div>
+			<div class="weixin-user">
+				商家 <span class="font-red">用户名</span> 正在向您发起一笔金额¥500.00的收款
+				请扫描以下二维码进行交易
+			</div>
+			<div class="weixin-qrcode">
+				<p class="sum">￥500.00</p>
+				<div class="qrcode-box">
+					<img src="../style/img/qrcode.png" alt="">
+				</div>
+			</div>
+			<div class="weixin-user">
+				<p class="font-15">温馨提示</p>
+				<p>如果您不认识 <span class="font-red">用户名</span> 请谨慎操作。</p>
+			</div>
+		</div>
+		<section class="inner-content function-box">
+			<ul class="function-ul">
+				<li>
+					<div class="share-img">
+						<img src="../style/img/share.png" alt="">
+					</div>
+					<div class="share-text">
+						分享二维码 <br>
+						至微信
+					</div>
+				</li>
+				<li>
+					<div class="share-img">
+						<img src="../style/img/download.png" alt="">
+					</div>
+					<div class="share-text">
+						保存二维码 <br>
+						至相册
+					</div>
+				</li>
+			</ul>
+		</section>
+	</section>
+</body>
+</html>

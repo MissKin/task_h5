@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改结算卡</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+<!--头部-->
+<header class="gradient-green c-header">
+	<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+	<div class="c-header-text" >修改结算卡</div>
+</header>
+<div class="contents-wrapper">
+	<div class="noticeYellow">请修改用户姓名名下的银行卡信息</div>
+
+	<div class="form-controls">
+		<span class="title">持卡人</span>
+		<input class="form-input" type="text"  placeholder='用户姓名' />
+	</div>
+	<div class="form-controls">
+		<span class="title">身份证</span>
+		<input class="form-input" type="text"  value="330******1234123" />
+	</div>
+	<div class="input-box" onclick="toggleSearch(true)">
+		<span class="title">开户银行</span>
+		<p class="text">开户银行</p>
+	</div>
+
+	<div class="input-box " onclick="showSelect()">
+		<span class="title">开户地点</span>
+		<p class="text">开户地点</p>
+	</div>
+	<div class="input-box" onclick="toggleSearch(true)">
+		<span class="title">银行网点</span>
+		<p class="text">选择银行网点</p>
+	</div>
+	<div class="form-controls">
+		<span class="title">银行卡号</span>
+		<input class="form-input" type="text"  placeholder='输入银行卡号' />
+	</div>
+	<div class="form-controls">
+		<span class="title">预留号码</span>
+		<input class="form-input" type="text"  placeholder='输入银行预留手机号' />
+	</div>
+	<div class="form-controls">
+		<span class="title">验证码</span>
+		<input class="form-input" style="width: 88px" type="text" placeholder='输入验证码' />
+		<button class="timerbtn disable" onclick="timer(this)">获取验证码</button>
+	</div>
+
+	<div class="btn btn-bg-green next-btn" >提交</div>
+	<!--居住地址三级联动选项-->
+	<section class="showChose" >
+		<select name="" id="Provice" >
+			<option  value="" ></option>
+		</select>
+		<select name="" id="City" >
+			<option value=""  ></option>
+		</select>
+	</section>
+</div>
+<!--搜索框-->
+<div class="search-wrapper">
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="toggleSearch(false)"><i class="icon-backicon"></i></a>
+		<div class="search-box-input" v-show="search">
+			<input type="text"  class="search-input" placeholder="输入银行名称" />
+		</div>
+		<div class="c-head-right">搜索</div>
+	</header>
+	<div class="notice">迷糊匹配，如“工商、农业、建设”银行等……</div>
+	<ul class="search-box" >
+		<li class="result-item" >bankName</li>
+	</ul>
+</div>
+
+<script src="../style/js/jquery-3.1.1.min.js"></script>
+<script src="../style/js/uploadImg.js"></script>
+<script>
+  function showSelect() {
+	$('.showChose').css({'opacity':1,'transform':'translateY(10px)','visibility': 'visible'}).show()
+  }
+  function toggleSearch(condition) {
+	if(condition){
+	  $('.search-wrapper').show();
+	}else {
+	  $('.search-wrapper').hide();
+	}
+
+  }
+  function toggleUploadImg(condition) {
+	if(condition){
+	  $('.uploadPhoto-wrapperr').show();
+	}else {
+	  $('.uploadPhoto-wrapper').hide();
+	}
+  }
+
+</script>
+</body>
+</html>

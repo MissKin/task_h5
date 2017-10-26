@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<title>支付详情</title>
+	<style>
+		html, body{
+		height: 100%;
+		background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >支付详情</div>
+		<div class="c-head-right">用户指南</div>
+	</header>
+	<div class="line-title">交易详情</div>
+	<div class="paybox">
+		<p class="pay-info">交易类型 <span class="pay-type">银联二维码</span></p>
+		<p class="pay-info">交易金额 <span class="pay-type font-red">银联二维码</span></p>
+	</div>
+	<div class="line-title">支付类型</div>
+	<div class="paybox arrow-right icon-backicon">
+		<a class="a-router" >
+			<div class="payimg">
+				<img src="../style/img/yinlian.png" alt="">
+			</div>
+			<div class="pay-text-box" >
+				<p class="pay-type">银联二维码小额</p>
+				<p class="pay-notice">单笔10～500元  0.38%+0元/笔</p>
+			</div>
+		</a>
+	</div>
+	<div class="paybox arrow-right icon-backicon">
+		<a class="a-router" >
+			<div class="payimg">
+				<img src="../style/img/weixin.png" alt="">
+			</div>
+			<div class="pay-text-box" >
+				<p class="pay-type">微信支付二维码小额</p>
+				<p class="pay-notice">单笔10～500元  0.38%+0元/笔</p>
+			</div>
+		</a>
+	</div>
+	<div class="paybox arrow-right icon-backicon">
+		<a class="a-router" >
+			<div class="payimg">
+				<img src="../style/img/zhifub.png" alt="">
+			</div>
+			<div class="pay-text-box" >
+				<p class="pay-type">支付宝二维码小额</p>
+				<p class="pay-notice">单笔10～500元  0.38%+0元/笔</p>
+			</div>
+		</a>
+	</div>
+</body>
+</html>

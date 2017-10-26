@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<title>余额提现</title>
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >提现</div>
+		<div class="c-head-right">用户指南</div>
+	</header>
+	<div class="bwithdraw-top-wrapper gradient-green">
+		<span class="small-font-15-w">提现金额：</span>
+		<div class="input-form">
+			<input type="tel" class="" v-model="withdraw_money" placeholder="0.00"/>
+		</div>
+		<span class="small-font-13-w">普通提现：单笔10万、日限额30万</span>
+	</div>
+	<section class="balanceW-wrapper">
+		<div class="balance-wrapper">
+			<div class="balance-detail">
+				<ul>
+					<li class="balance-item">
+						<span class="balance-title">可提现金额：</span>
+						<p class="bablance-result">2000.00元</p>
+					</li>
+					<li class="balance-item">
+						<span class="balance-title">到账银行卡：</span>
+						<p class="bablance-result">1234567*****1234567</p>
+					</li>
+					<li class="balance-item">
+						<span class="balance-title">T1普通提现：</span>
+						<p class="balance-title">下一工作日结算到账（支持24小时提现到账）</p>
+					</li>
+				</ul>
+			</div>
+			<div class="recorder-box ">
+				<span class="arrow-right icon-backicon">提现记录</span>
+			</div>
+		</div>
+		<div class="btn btn-bg-green" onclick="showModal(true)" ">提现</div>
+	</section>
+	<!--输入登录密码-->
+	<section class="withdraw-pop-wrapper popmask" >
+		<div class="withdraw-pop-content">
+			<span class="btn-cancel" onclick="showModal(false)">取消</span>
+			<img class="lock" src="../style/img/lock.png" alt=""/>
+			<h3 class="withdraw-title">验证登录密码：</h3>
+			<div class="input-radius input-pwd">
+				<input type="password" placeholder="请输入登录密码"/>
+			</div>
+			<a href="javascript:;" class="input-radius confirm-withdraw">确认提现</a>
+		</div>
+	</section>
+	<script src="../style/js/jquery-3.1.1.min.js"></script>
+	<script>
+		function showModal(flag) {
+		  if(flag){
+			$('.withdraw-pop-wrapper').show()
+		  }else{
+			$('.withdraw-pop-wrapper').hide()
+		  }
+
+		}
+	</script>
+</body>
+</html>

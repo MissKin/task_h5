@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"信用卡详情"})
+<body>
+<section class="h100">
+	@@include('../../include/head.html',{"title":"信用卡详情"})
+	<div class="cardDetail">
+
+	</div>
+
+</section>
+<script type="text/html" id="credit-detail">
+	<section class="card_content">
+		<div class="credit_one wzbank">
+			<div class="credits_bank_name">
+				<div class="credits-img"><img src="../../style/img/yinlian.png" alt=""></div>
+				<div class="credits_bank_info">
+					<h3>温州银行 <span class="small_fs14">(已认证)</span></h3>
+					<h4><em>**** **** **** *** </em>1234</h4>
+				</div>
+			</div>
+			<div class="credits_infos_account">
+				<span class="text">账单日：08日</span>
+				<span class="text">还款日：22日</span>
+			</div>
+		</div>
+		{{ if auth}}
+		<div class="card_plan_rule_box">
+			<div class="card_plan_rule">
+				<span class="title fs16fc61">2017.10.10-2017.11.11</span>
+				<a href="planRule.html" class="detail right icon-arrow-s-right">计划详情</a>
+			</div>
+			<div class="plan_infos">
+				<p class="plan_num fs14fc94">计划编号：X233231 <span class="font-red">付款失败</span></p>
+				<span class="fs14fc94">计划额度（元）</span>
+				<h2>10000.00</h2>
+			</div>
+			<div class="plan_config">
+				<div>
+					<h4>计划比例</h4>
+					<span>10 <em>%</em></span>
+				</div>
+				<div>
+					<h4>计划配置</h4>
+					<span>12 <em>%</em></span>
+				</div>
+				<div class="plan_success">
+					<h4>还款成功</h4>
+					<span>12<em>/12</em></span>
+				</div>
+				<div class="plan_success">
+					<h4>消费成功</h4>
+					<span>10 <em>/12</em></span>
+				</div>
+			</div>
+		</div>
+		<div class="card_operation">
+			<a class="">卡片修改</a>
+			<a class=" show-hook" onclick="setPop('show')">卡片解绑</a>
+			<a href="historyRecord.html" class="" >历史记录</a>
+		</div>
+		{{ else}}
+		<div class="card_plan_rule_box">
+			<div class="plan_infos">
+				<div class="noplan_text">
+					认证卡片后开启
+				</div>
+			</div>
+		</div>
+		{{/if}}
+	</section>
+	{{if auth}}
+	<a href="customPlan.html" class="card_btn_bottom">制定新的还款计划</a>
+	{{else}}
+	<a href="authCard.html" class="card_btn_bottom">认证卡片</a>
+	{{/if}}
+	<!--pop-->
+	<section class="popmask displaynone">
+		<div class="pop_content">
+			<div class="pop_inner">
+				<span class="pop_title warm_icon">卡片解绑</span>
+				<div class="pop_word">卡片解绑将删除所有数据以及计划,是否确认解绑该卡片？</div>
+			</div>
+			<div class="pop_btns">
+				<a href="" class="pop_btn_red card_btn sure-hook">确认解绑</a>
+				<a href="" class="pop_btn_gary card_btn cancel-hook">取消</a>
+			</div>
+		</div>
+	</section>
+</script>
+<script src="../../style/js/jquery-3.1.1.min.js"></script>
+<script src="../../style/js/template-web.js"></script>
+<script>
+	function setPop(type){
+	  if(type =='show') {
+		if ($('.popmask').attr('class').indexOf('displaynone') > -1) {
+		  $('.popmask').removeClass('displaynone');
+		  return;
+		}
+	  }
+	  if(type == 'hide'){
+	    if($('.popmask').attr('class').indexOf('displaynone')<0){
+		  $('.popmask').addClass('displaynone');
+	    }
+		return;
+	  }
+	}
+	$('.cancel-hook,.sure-hook').on('click',function(){
+	  setPop('hide');
+	})
+	/*内容显示*/
+	var data={
+	  auth:true
+	}
+	var credit_html = template('credit-detail',data);
+	$('.cardDetail').html(credit_html)
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<title>提现记录</title>
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >提现记录</div>
+	</header>
+	<div class="record-list">
+		<ul>
+			<li class="record-item" >
+				<div class="left_des description">
+					<span class="line_top">2017/08/01 15:21:32</span><br>
+					<span class="line_bottom">提现单号：L12343210089482123</span>
+				</div>
+				<div class="right_des description">
+					<span class="line_top">￥100.0</span><br>
+					<span class="line_bottom" class="font-green"> 成功</span>
+				</div>
+			</li>
+			<li class="record-item" >
+				<div class="left_des description">
+					<span class="line_top">2017/08/01 15:21:32</span><br>
+					<span class="line_bottom">提现单号：L12343210089482123</span>
+				</div>
+				<div class="right_des description">
+					<span class="line_top">￥100.0</span><br>
+					<span class="line_bottom" class="font-red"> 失败</span>
+				</div>
+			</li>
+		</ul>
+		<div class="norecord" >
+			<img src="../style/img/norecord.png" alt="" width="150px"/>
+			<p class="norecord_text">还没有记录噢～</p>
+		</div>
+	</div>
+</body>
+</html>

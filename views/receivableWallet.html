@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<link rel="stylesheet" href="../style/css/swiper.min.css">
+
+	<script src="../style/js/jquery-3.1.1.min.js"></script>
+	<title>app</title>
+	<style>
+		body{font-family: 'Microsoft YaHei'}
+	</style>
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+<div class="wallet-wrapper">
+	<ul class="wallet-nav gradient-green">
+		<li class="wallet-nav-item">
+			<div class="bg-image-wallet wallet-nav-img"></div>
+			<span class="text">我的钱包</span>
+		</li>
+		<li class="wallet-nav-item">
+			<div class="bg-image-ylzf wallet-nav-img"></div>
+			<span class="text">银联支付</span>
+		</li>
+		<a class="wallet-nav-item" href="./scanCodePayment.html">
+			<div class="bg-image-smzf wallet-nav-img"></div>
+			<span class="text">扫码支付</span>
+		</a>
+	</ul>
+	<div class="wallet-content">
+		<div class="wallet-wrapper-item ">
+			<div class="wallet-wrapper-first">
+				<div class="wallet-item-wrapper">
+					<div class="item-icon-ul">
+						<a class="item-icon border-right border-bottom" href="billingQuery.html">
+							<div class="item-icon-img zdcx"></div>
+							<span class="text">账单查询</span>
+						</a>
+						<a class="item-icon border-right border-bottom" href="balance.html">
+							<div class="item-icon-img frye"></div>
+							<span class="text">分润余额</span>
+						</a>
+						<a class="item-icon border-bottom" href="myPartner.html">
+							<div class="item-icon-img wdlb"></div>
+							<span class="text">我的乐伴</span>
+						</a>
+					</div>
+					<div class="item-icon-ul">
+						<a class="item-icon border-right" href="myFee.html">
+							<div class="item-icon-img wdfl"></div>
+							<span class="text">我的费率</span></a>
+						<a class="item-icon border-right"> <div class="item-icon-img wdtjm"></div><span class="text">我的推荐码</span></a>
+						<a class="item-icon last-item-icon">
+							敬请 <br> 期待
+						</a>
+					</div>
+				</div>
+				<!--轮播-->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="../style/img/banner.png" alt=""></div>
+						<div class="swiper-slide"><img src="../style/img/banner2.png" alt=""></div>
+						<div class="swiper-slide"><img src="../style/img/banner3.png" alt=""></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<div class="wallet-third-module">
+
+						<a class="item-icon border-right border-bottom">
+							<div class="item-icon-img credit"></div>
+							<span class="text">信用卡申请</span>
+						</a>
+						<a class="item-icon border-right border-bottom">
+							<div class="item-icon-img loan"></div>
+							<span class="text">信用贷款</span>
+						</a>
+						<a class="item-icon border-bottom">
+							<div class="item-icon-img gengduo"></div>
+							<span class="text">更多</span>
+						</a>
+
+				</div>
+			</div>
+		</div>
+		<div class="wallet-wrapper-item displaynone">
+			<div class="wallet-item-wrapper">
+					<div class="paymoney-wrapper">
+						<p class="text">请输入收款金额：</p>
+						<div class="moneyInput">
+							<div class="show-money show-active" id="money"></div>
+						</div>
+					</div>
+					<div class="keyboard">
+						<ul class="keyboard-ul" onclick="calculate.getNum(event)">
+							<li class="pressed num"  data-value="1">1</li>
+							<li class="pressed num" data-value="2">2</li>
+							<li class="pressed num" data-value="3">3</li>
+							<li class="del pressed" id="go_back" onclick="calculate.deleteNum()"><span class="icon-delet"></span></li>
+							<li class="pressed num" data-value="4">4</li>
+							<li class="pressed num" data-value="5">5</li>
+							<li class="pressed num" data-value="6">6</li>
+							<li class="enter  pLi" id="surepay"
+							    onclick="javascript:window.location.href='./payDetail.html';">确认支付
+							</li>
+							<li class="pressed num" data-value="7">7</li>
+							<li class="pressed num" data-value="8">8</li>
+							<li class="pressed num" data-value="9">9</li>
+							<li class="pressed zero num" data-value="0">0</li>
+							<li class="pressed zero num" data-value="00">00</li>
+							<li class="pressed dot" onclick="calculate.addDot()" data-value=".">.</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+<script src="../style/js/jquery-3.1.1.min.js"></script>
+<script src="../style/js/swiper.jquery.min.js"></script>
+<script src="../style/js/Calculate.js"></script>
+<script src="../style/js/util.js"></script>
+<script>
+	$(function () {
+	  var mySwiper = new Swiper('.swiper-container',{
+		direction: 'horizontal',
+		loop: true,
+	    autoplay:3000,
+		pagination : '.swiper-pagination',
+	  })
+	});
+	tab('.wallet-nav','.wallet-content');
+	/*计算器*/
+	var calculate = new Calculate();
+</script>
+</body>
+</html>

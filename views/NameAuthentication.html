@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实名认证</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >实名认证</div>
+	</header>
+	<div class="contents-wrapper">
+		<div class="noticeYellow">友情提示：只有通过实名认证才能有效收款使用</div>
+		<div class="phone-text">当前账户：159632589658</div>
+		<div class="form-controls">
+			<span class="title">推荐人号码</span>
+			<input class="form-input" type="tel"  placeholder='推荐人手机号码（选填）' />
+		</div>
+		<div class="form-controls">
+			<span class="title">姓名</span>
+			<input class="form-input" type="text"  placeholder='输入真实姓名' />
+		</div>
+		<div class="form-controls">
+			<span class="title">身份证</span>
+			<input class="form-input" type="text"  placeholder='输入本人身份证' />
+		</div>
+		<div class="input-box" onclick="toggleSearch(true)">
+			<span class="title">开户银行</span>
+			<p class="text">开户银行</p>
+		</div>
+
+		<div class="input-box " onclick="showSelect()">
+			<span class="title">开户地点</span>
+			<p class="text">开户地点</p>
+		</div>
+		<div class="input-box" onclick="toggleSearch(true)">
+			<span class="title">银行网点</span>
+			<p class="text">选择银行网点</p>
+		</div>
+		<div class="form-controls">
+			<span class="title">银行卡号</span>
+			<input class="form-input" type="text"  placeholder='输入银行卡号' />
+		</div>
+		<div class="form-controls">
+			<span class="title">预留号码</span>
+			<input class="form-input" type="text"  placeholder='输入银行预留手机号' />
+		</div>
+		<div class="form-controls">
+			<span class="title">验证码</span>
+			<input class="form-input" style="width: 88px" type="text" placeholder='输入验证码' />
+			<button class="timerbtn disable" onclick="timer(this)">获取验证码</button>
+		</div>
+
+		<div class="btn btn-bg-green next-btn" onclick="toggleUploadImg(true)" >下一步</div>
+		<!--居住地址三级联动选项-->
+		<section class="showChose" >
+			<select name="" id="Provice" >
+				<option  value="" ></option>
+			</select>
+			<select name="" id="City" >
+				<option value=""  ></option>
+			</select>
+		</section>
+	</div>
+	<!--搜索框-->
+	<div class="search-wrapper">
+		<header class="gradient-green c-header">
+			<a class="c-back font-white" onclick="toggleSearch(false)"><i class="icon-backicon"></i></a>
+			<div class="search-box-input" v-show="search">
+				<input type="text"  class="search-input" placeholder="输入银行名称" />
+			</div>
+			<div class="c-head-right">搜索</div>
+		</header>
+		<div class="notice">迷糊匹配，如“工商、农业、建设”银行等……</div>
+		<ul class="search-box" >
+			<li class="result-item" >bankName</li>
+		</ul>
+	</div>
+	<!--上传照片-->
+	<div class="uploadPhoto-wrapper" style="display: block;">
+		<header class="gradient-green c-header">
+			<a class="c-back font-white" onclick="toggleUploadImg(false)"><i class="icon-backicon"></i></a>
+			<div class="c-header-text" >上传照片</div>
+		</header>
+		<div class="contents-wrapper">
+			<div class="photos-wrapper">
+				<div class="filebox">
+					<div class="file-inner">
+						<div class="showImg">
+							<img src="" alt="" id="showImg1">
+						</div>
+						<div class="fileinput">
+							<input type="file" id="file1" class="displaynone"
+							       onchange="uploadImg(this,'showImg1','hiddenImg1')">
+							<label for="file1" class="fileLabel" id="hiddenImg1"></label>
+						</div>
+					</div>
+					<p>添加身份证正面</p>
+				</div>
+				<div class="filebox">
+					<div class="file-inner">
+						<div class="showImg">
+							<img src="" alt="">
+						</div>
+						<div class="fileinput">
+							<input type="file" id="file2" class="displaynone"
+							       onchange="uploadImg(this,'showImg2','hiddenImg2')">
+							<label for="file2" class="fileLabel"></label>
+						</div>
+					</div>
+					<p>添加身份证反面</p>
+				</div>
+				<div class="filebox">
+					<div class="file-inner">
+						<div class="showImg">
+							<img src="" alt="">
+						</div>
+						<div class="fileinput">
+							<input type="file" id="file3" class="displaynone"
+							       onchange="uploadImg(this,'showImg3','hiddenImg3')">
+							<label for="file3" class="fileLabel"></label>
+						</div>
+					</div>
+					<p>收款银行卡照片</p>
+				</div>
+				<div class="filebox">
+					<div class="file-inner">
+						<div class="showImg">
+							<img src="" alt="">
+						</div>
+						<div class="fileinput">
+							<input type="file" id="file4" class="displaynone"
+							       onchange="uploadImg(this,'showImg4','hiddenImg4')">
+							<label for="file4" class="fileLabel"></label>
+						</div>
+					</div>
+					<p>手持身份证照片</p>
+				</div>
+			</div>
+			<div class="btn btn-bg-green next-btn" >提交</div>
+			<a class="btn green_emptyBtn next-btn" style="display: block;" href="picExample.html">图片示例</a>
+		</div>
+	</div>
+	<script src="../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../style/js/uploadImg.js"></script>
+	<script>
+		function showSelect() {
+		  $('.showChose').css({'opacity':1,'transform':'translateY(10px)','visibility': 'visible'}).show()
+		}
+		function toggleSearch(condition) {
+		  if(condition){
+			$('.search-wrapper').show();
+		  }else {
+			$('.search-wrapper').hide();
+		  }
+
+		}
+		function toggleUploadImg(condition) {
+		  if(condition){
+			$('.uploadPhoto-wrapperr').show();
+		  }else {
+			$('.uploadPhoto-wrapper').hide();
+		  }
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<link rel="stylesheet" href="../style/css/mobiscroll.core-2.5.2.css">
+	<link rel="stylesheet" href="../style/css/mobiscroll.animation-2.5.2.css">
+	<title>账单</title>
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >账单</div>
+	</header>
+	<div class="bill-top-wrapper">
+		<div class="bill-date">
+			<input type="text" class="start-date input-date" id="starTime" placeholder="选择起始时间"/>
+			<span class="small-line">-</span>
+			<input type="text" class="end-date input-date" id="endTime" placeholder="选择结束时间"/>
+			<div class="btn-query">查询</div>
+		</div>
+		<div class="bill-tab">
+			<li class="tab-title active" >收款</li>
+			<li class="tab-title">分润</li>
+			<li class="tab-title" >提现</li>
+		</div>
+	</div>
+	<div class="bill-content">
+		<div class="record-list">
+			<ul>
+				<li class="record-item" >
+					<div class="description">
+						<span class="price font-red" >+100.00</span>
+						<span class="result right  font-green" >成功</span>
+					</div>
+					<div class="detail"><span class="title">订单编号:</span>L23211218201011132</div>
+					<div class="detail"><span class="title">订单时间:</span>2017/07/07 15:32</div>
+					<div class="detail"><span class="title">支付方式:</span>银联积分，T+0，需提现</div>
+				</li>
+				<li class="record-item" >
+					<div class="description">
+						<span class="price font-gray" >+100.00</span>
+						<span class="result right font-red" >失败</span>
+					</div>
+					<div class="detail"><span class="title">订单编号:</span>L23211218201011132</div>
+					<div class="detail"><span class="title">订单时间:</span>2017/07/07 15:32</div>
+					<div class="detail"><span class="title">支付方式:</span>银联积分，T+0，需提现</div>
+				</li>
+			</ul>
+		</div>
+		<div class="record-list displaynone">
+			<ul>
+				<li class="record-item" >
+					<div class="description">
+						<span class="price font-blue">+100.00</span>
+						<span class="result right font-green" >成功</span>
+					</div>
+					<div class="detail"><span class="title">订单编号:</span>L23211218201011132</div>
+					<div class="detail"><span class="title">订单时间:</span>2017/07/07 15:32</div>
+					<div class="detail"><span class="title">支付方式:</span>银联积分，T+0，需提现</div>
+				</li>
+				<li class="record-item" >
+					<div class="description">
+						<span class="price font-blue" >+100.00</span>
+						<span class="result right font-red" >失败</span>
+					</div>
+					<div class="detail"><span class="title">订单编号:</span>L23211218201011132</div>
+					<div class="detail"><span class="title">订单时间:</span>2017/07/07 15:32</div>
+					<div class="detail"><span class="title">支付方式:</span>银联积分，T+0，需提现</div>
+				</li>
+			</ul>
+		</div>
+		<div class="record-list displaynone">
+			<ul>
+				<li class="record-item" >
+					<div class="description">
+						<span class="price font-ora" >+100.00</span>
+						<span class="result right font-gray" >失败</span>
+					</div>
+					<div class="detail"><span class="title">订单编号:</span>L23211218201011132</div>
+					<div class="detail"><span class="title">订单时间:</span>2017/07/07 15:32</div>
+					<div class="detail"><span class="title">提现费率:</span>T+0，手续费0.48%，返现费2.00</div>
+					<div class="detail"><span class="title">支付方式:</span>银联积分，T+0，需提现</div>
+				</li>
+				<li class="record-item" >
+					<div class="description">
+						<span class="price font-ora" >+100.00</span>
+						<span class="result right font-green" >成功</span>
+					</div>
+					<div class="detail"><span class="title">订单编号:</span>L23211218201011132</div>
+					<div class="detail"><span class="title">订单时间:</span>2017/07/07 15:32</div>
+					<div class="detail"><span class="title">提现费率:</span>T+0，手续费0.48%，返现费2.00</div>
+					<div class="detail"><span class="title">支付方式:</span>银联积分，T+0，需提现</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script src="../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../style/js/mobiscroll.core-2.5.2.js"></script>
+	<script src="../style/js/mobiscroll.core-2.5.2-zh.js"></script>
+	<script src="../style/js/mobiscroll.datetime-2.5.1.js"></script>
+	<script src="../style/js/mobiscroll.datetime-2.5.1-zh.js"></script>
+	<script src="../style/js/util.js"></script>
+	<script>
+	  tab('.bill-tab','.bill-content','active');
+	  /*时间插件*/
+	  $(function () {
+		var now = new Date(),
+		  minDate = new Date(now.getFullYear() - 110, 0, 1),
+		  maxDate = new Date(now.getFullYear() - 18, 11, 31);
+
+		$('#starTime').mobiscroll().date({
+		  theme: "mobiscroll",
+		  display: 'bottom',
+		  mode: 'scroller', //日期选择模式
+		  lang: 'zh',
+		  dateFormat: 'yyyy-mm-dd',
+		  onClose: function (event, inst) {
+			$('#endTime').mobiscroll().date({
+			  theme: "mobiscroll",
+			  display: 'bottom',
+			  mode: 'scroller', //日期选择模式
+			  lang: 'zh',
+			  dateFormat: 'yyyy-mm-dd',
+			  onShow(){
+				console.log('onClose'+$('#starTime').val());
+			  }
+			})
+		  }
+		});
+	  });
+
+	</script>
+</body>
+</html>

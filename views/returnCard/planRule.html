@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"计划规则"})
+<body>
+
+	@@include('../../include/head.html',{"title":"计划规则"})
+	<section class="card_content">
+	</section>
+	<script id="plan" type="text/html">
+		<div class="credit_one wzbank">
+			<div class="credits_bank_name">
+				<div class="credits-img"><img src="../../style/img/yinlian.png" alt=""></div>
+				<div class="credits_bank_info">
+					<h3>温州银行 <span class="small_fs14">(已认证)</span></h3>
+					<h4><em>**** **** **** *** </em>1234</h4>
+				</div>
+			</div>
+			<div class="credits_infos_account border_btE4" >
+				<span class="text">还款天数 <span class="btn_sm_yellow">10天</span></span>
+				<span class="text">还款金额：10000元</span>
+			</div>
+			<div class="credits_infos_account border_btE4">
+				<span class="text">账单日：<span class="btn_sm_blue">10天</span></span>
+				<span class="text">还款本金：1000元</span>
+			</div>
+			<div class="credits_infos_schedule">
+				{{ if judge}}
+					<span>日程已生成  <a href="./scheduleDetail.html" class="icon-arrow-detail">查看详情</a></span>
+					<a class="icon-arrow-restart ">重新生成</a>
+				{{else}}
+					<a class="icon-arrow-detail">生成新的日程</a>
+				{{/if}}
+			</div>
+		</div>
+		<div class="credits_btns_box">
+			<a href="" class="btn_cancel">删除计划</a>
+			<a href="customPlan.html" class="btn_start_plan">开始计划</a>
+		</div>
+</script>
+	<script src="../../style/js/template-web.js"></script>
+	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script>
+		var data ={
+		  judge:true,//false 未生成, true 已生成
+		}
+		var planhtml = template('plan',data);
+		$('.card_content').html(planhtml);
+	</script>
+</body>
+</html>

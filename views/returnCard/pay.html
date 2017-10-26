@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include('../../include/headTag.html',{"title":"付款"})
+<body>
+<section class="bg-white" style="    height: auto;">
+	@@include('../../include/head.html',{"title":"付款"})
+	<section class="schedule_box">
+		<p><span class="title">需预缴手续费金额：</span>80元-8元-10=72元</p>
+		<p><span class="title">需预留信用卡额度：</span>500元</p>
+	</section>
+	<section class="card_open_div">
+		<ul class="card_be_title">
+			<li class="card_open_title active">实体卡开通</li>
+			<li class="card_open_title">线上开通</li>
+		</ul>
+		<div class="card_be_content card_content">
+			<div class="card_open_child ">
+				<div class="card_input_div">
+					<div class="card_input_title">卡号：</div>
+					<input type="text" class="card_input_control" placeholder="请输入卡号">
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">持卡人姓名：</div>
+					<input type="text" class="card_input_control" placeholder="请输入持卡人姓名">
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">有效期：</div>
+					<input type="text" class="card_input_control" placeholder="请输入有效期，如22/08则输入2208">
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">CVN2：</div>
+					<input type="text" class="card_input_control" placeholder="请输入卡背面末尾3位数字">
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">银行预留手机号：</div>
+					<div type="text" class="card_input_control" >
+						<input type="text" placeholder="请输入预留手机号">
+						<span class="card_send_check">发送验证码</span>
+					</div>
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">输入验证码：</div>
+					<input type="text" class="card_input_control" style="width:40%" placeholder="请输入验证码">
+				</div>
+				<div class="card_input_div">
+					<input type="checkbox" class="check_read" checked />
+					<label class="check_label">我已经 <a href="javascript;" class="font-blue">阅读使用守则</a> </label>
+				</div>
+			</div>
+			<div class="card_open_child displaynone">
+				<div class="card_input_div">
+					<div class="card_input_title">卡号：</div>
+					<input type="text" class="card_input_control" placeholder="请输入卡号">
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">持卡人姓名：</div>
+					<input type="text" class="card_input_control" placeholder="请输入持卡人姓名">
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">银行预留手机号：</div>
+					<div type="text" class="card_input_control" >
+						<input type="text" placeholder="请输入预留手机号">
+						<span class="card_send_check">发送验证码</span>
+					</div>
+				</div>
+				<div class="card_input_div">
+					<div class="card_input_title">输入验证码：</div>
+					<input type="text" class="card_input_control" style="width:40%" placeholder="请输入验证码">
+				</div>
+				<div class="card_input_div">
+					<input type="checkbox" class="check_read" checked />
+					<label class="check_label">我已经 <a href="javascript;" class="font-blue">阅读使用守则</a> </label>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="card_content">
+		<a class="card_btn_block yellow" href="pay.html">充值并开始计划</a>
+	</div>
+</section>
+	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../../style/js/util.js"></script>
+	<script>
+	  tab('.card_be_title','.card_be_content','active')
+	</script>
+</body>
+</html>

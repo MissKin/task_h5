@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"认证卡片"})
+<body>
+<section class="h100">
+	@@include('../../include/head.html',{"title":"认证卡片"})
+	<section class="card_content">
+		<div class="noticeYellow">
+			注意：认证信用卡将从卡中收取10元的认证手
+			续费，可抵扣10元还卡的手续费
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">信用卡号码：231901789109181</div>
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">信用卡有效期：</div>
+			<input type="text" class="card_input_control" placeholder="请输入有效期，如22/08则输入2208">
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">信用卡CVN2：</div>
+			<input type="text" class="card_input_control" placeholder="请输入卡背面末尾3位数字">
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">银行预留手机号：</div>
+			<div type="text" class="card_input_control" >
+				<input type="text" placeholder="请输入预留手机号">
+				<input type="button" class="card_send_check" onclick="sendTimer(this)" value="发送验证码"/>
+			</div>
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">输入验证码：</div>
+			<input type="text" class="card_input_control" style="width:40%" placeholder="请输入验证码">
+		</div>
+		<div class="card_btn_block yellow">认证</div>
+	</section>
+</section>
+<script src="../../style/js/jquery-3.1.1.min.js"></script>
+<script>
+	var time = 5
+	function sendTimer(obj){
+	  if(time == 0){
+		$(obj).attr('disabled');
+		$(obj).val('发送验证码');
+		return;
+	  }else{
+		$(obj).attr('disabled',false);
+		$(obj).val('重发'+time+'s');
+		time--
+	  }
+	  setTimeout(function(){
+		sendTimer(obj)
+	  },1000)
+	}
+</script>
+</body>
+</html>

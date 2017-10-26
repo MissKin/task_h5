@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改手机号</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >修改手机号</div>
+	</header>
+	<div class="contents-wrapper">
+		<div class="phone-text lineht2"><span>原手机号码: </span> <b >18900187652</b></div>
+		<!--验证码的input框-->
+		<div class="form-controls">
+			<span class="title">验证码</span>
+			<input class="form-input" style="width: 88px" type="text" placeholder='输入验证码' />
+			<button class="timerbtn green" onclick="timer(this)">获取验证码</button>
+		</div>
+
+		<div class="btn btn-bg-green next-btn">下一步</div>
+	</div>
+	<script src="../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../style/js/util.js"></script>
+</body>
+</html>

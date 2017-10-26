@@ -1,0 +1,834 @@
+@charset "utf-8";
+
+@yellow:#E5B968;
+@gray:#949494;
+@blue:#59A9ED;
+@red:#ED4444;
+@fs12:1.2rem;
+@fs15:1.5rem;
+.bankbg(@start:#EBB13A,@end:#E2941D,@radius:5px){
+	background-image: linear-gradient(-90deg, @start 0%, @end 98%);
+	border-top-left-radius: @radius;
+	border-top-right-radius: @radius;
+}
+
+.border_bt(@color:#E4E4E4){
+	border-bottom: 1px solid #E4E4E4;
+}
+.border_btE4{
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.bg_img(@url){
+	background: url(@url) no-repeat;
+}
+.btn_sm(@color){
+	background: @color;
+	padding: 2px 4px;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 1.4rem;
+}
+.icon-arrow-r(@color){
+	position: absolute;
+	content: "\e902";
+	width: 14px;
+	height: 14px;
+	right: -15px;
+	transform: rotate(180deg);
+	top: 8%;
+	color:@color;
+	font-size: 1.4rem;
+}
+.btn_style{
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	padding: 4% 0;
+	text-align: center;
+}
+.btn_big(@color:#FFFFFF){
+	border: 1px solid @color;
+	border-radius: 3px;
+	font-size: 2rem;
+	color: @color;
+	width: 70px;
+	display: inline-block;
+	height: 48px;
+	text-align: center;
+	line-height: 48px;
+	margin-right: 7px;
+}
+.card_bank_line{
+	padding-left: 4.5%;
+	text-align: left;
+}
+
+body,html{
+	height: 100%;
+	background: #EDEDED;
+	font-size: 62.5%;
+}
+em{font-style: normal;    font-family: microsoft YaHei;}
+.fs12{
+	font-size: 1.2rem;
+}
+.fs15{
+	font-size: 1.5rem;
+}
+.fs14fc94{
+	font-size: 1.4rem;
+	color: #949494;
+}
+.fs16fc61{
+	font-size: 16px;
+	color: #616161;
+}
+.bg-white{
+	height: auto;
+	min-height: 100%;
+	background: #fff;
+}
+.h100{
+	position: relative;
+	height: 100%;
+}
+.c-header{    background: #ffffff;border-bottom: 1px solid #E4E4E4;}
+.search-box-input {
+	position: absolute;
+	width: 66%;
+	padding-left: 10px;
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	border-radius: 19px;
+	background: #ffffff;
+	margin-top: 5px;
+	overflow: hidden;
+	border: 1px solid #ececec;
+}
+.c-header-text {
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	width: calc(~" 100% - 188px");
+	margin: 0 94px 0 94px;
+	top: 0;
+}
+.btn_hollow_yw{
+	border: 2px solid #DDBD84;
+	padding:8px 20px;
+	font-size: 1.6rem;
+	color: #DDBD84;
+}
+.notice {
+	height: 40px;
+	background: #F9E9CF;
+	 border: none;
+	font-size: 13px;
+	color: #E2A33B;
+	line-height: 40px;
+	padding-left: 8px;
+}
+
+.box{
+	display:-webkit-flex;
+	display: flex;
+	flex-direction: column;
+	-webkit-box-orient: vertical;
+	height: calc(~"100% - 45px");
+}
+.card_minecard{
+	position: relative;
+	padding: 15px 6% 0;
+	background: #fff;
+	.border_bt
+}
+.card_cardinfo{
+	display: flex;
+	justify-content: flex-start;
+}
+.card_img{
+	width: 100%;
+	height: 100%;
+}
+.card_cardtext{
+	flex: 1;
+	padding-left: 5%;
+}
+.card_deduction{
+	font-family:'dine';
+	font-size: 3.6rem;
+	color: #202020;
+	margin-bottom: 6px;
+	line-height: 1.2;
+}
+
+.credit_card{
+	padding: 5px 0 15px;
+	display: flex;
+	justify-content: space-between;
+}
+.mine_credit{    font-size: 1.7rem;
+	color: #202020;    padding-left: 25px;}
+.add_credit{    font-size: 1.6rem;
+	color: #949494;    padding-left: 25px;}
+.credits_box{
+	flex: 1;
+	overflow-y: scroll;
+	padding: 16px 4.8% 0;
+}
+.credit_one{
+	position:relative;
+	display: block;
+	padding-bottom:2px;
+	margin-bottom: 14px;
+}
+.wzbank{
+	.bankbg(#EBB13A,#E2941D,5px)
+}
+.jtbank{
+	.bankbg(#4F74AF,#36588F,5px)
+}
+.credits_bank_name{
+	position: relative;
+	overflow: hidden;
+	padding: 13px 15px;
+}
+.credits-img{
+	float: left;
+	width: 48px;
+	height: 48px;
+	background: #FFFFFF;
+	border-radius: 50%;
+	overflow: hidden;
+	text-align: center;
+	line-height: 48px;
+}
+.credits-img> img{
+	width: 65%;
+	vertical-align: middle;
+}
+.credits_bank_info{
+	float: left;
+	color: #FFFFFF;
+	margin-left: 14px;
+}
+.credits_bank_info .small_fs14{
+	opacity: 0.6;
+	font-size: 1.4rem;
+}
+.credits_bank_info h3{
+	font-size: 1.7rem;
+	color: #FFFFFF;
+	line-height: 1.5;
+}
+.credits_bank_info h4{
+	font-family:'dine';
+	font-size: 2.0rem;
+	color: rgba(255,255,255,0.6);
+	line-height: 1.5;
+}
+.credits_infos{
+	padding:0 3.7%;
+	background: #fff;
+}
+.credits_infos_account{
+	display:flex;
+	justify-content: space-between;
+	background: #fff;
+	padding: 10px 0;
+}
+.credits_infos_account .text{
+	flex:1;
+	text-align: center;
+	font-size: 1.5rem;
+	color: #616161;
+}
+.credits_infos_account .text:first-child{
+	border-right: 1px solid  #ECECEC;
+}
+.credits_left .text{
+	padding-left: 4.5%;
+	text-align: left;
+
+}
+.credits_infos_schedule{
+	background: #fff;
+	padding: 20px 16px;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
+	color: #616161;
+	span{
+		flex: 2;
+		border-right: 1px solid #ececec;
+	}
+}
+.icon-arrow-restart{
+	flex: 0.8;
+	padding-left: 15px;
+	position:relative;
+	text-decoration: underline;
+}
+.icon-arrow-detail{
+	position:relative;
+	color: #E5B968;
+	text-decoration: underline;
+	font-weight:800;
+}
+.icon-arrow-detail:before{
+	.icon-arrow-r(#F5A623)
+}
+.icon-arrow-restart:before{
+	.icon-arrow-r(#949494)
+}
+.credits_btns_box{
+	display:flex;
+	justify-content:space-around;
+	.btn_cancel{
+		width: 32%;
+		background: #ED4444;
+		display: block;
+		.btn_style;
+	}
+	.btn_start_plan{
+		background: #E5B968;
+		width: 65%;
+		.btn_style;
+	}
+}
+.schedule_box{
+	padding:14px 12px;
+	background: #F8E9CF;
+	border-top: 1px solid #EECD94;
+	border-bottom: 1px solid #eecd94;
+	font-size: 1.4rem;
+	color: #E1A33B;
+	line-height: 24px;
+	.title{
+		font-weight: 800;
+		font-size: 1.5rem;
+	}
+}
+.schedule_detaill_box{
+	margin-top: 10px;
+	.date{
+		height: 34px;
+		line-height: 34px;
+		background: #E5B968;
+		font-size: 1.7rem;
+		color: #FFFFFF;
+		text-align: center;
+	}
+	.data_ul{
+		li.title > span{
+			font-weight: 800;
+		}
+		li{height: 34px;
+			line-height: 34px;
+			font-size: 1.6rem;
+			color: #616161;
+			display: flex;
+			justify-content: center;
+		}
+		li:nth-child(even){
+			background: #FFFFFF;
+		}
+		li:nth-child(odd){
+			background: #F6F6F6;
+		}
+		li>span{
+			flex: 1;
+			text-align: center;
+			border-right: 1px solid #ececec;
+		}
+		li>span.yellow{
+			color:@yellow;
+		}
+		li>span.blue{
+			color:@blue;
+		}
+		li>span:last-child{
+			border-right:none;
+		}
+	}
+}
+
+.credit_date{
+	width: 100%;
+	font-size: 1.5rem;
+	padding: 12px 0;
+	color: #919191;
+}
+.credit_date > .title{
+	color: #504f4f;
+}
+.credit_date:first-child{
+	.border_bt;
+}
+.credits_null{
+	padding-top: 50px;
+	text-align: center;
+}
+.no_credits{
+	padding: 10px 0;
+	font-size: 16px;
+	color: #949494;
+}
+.credits_add{
+	display: inline-block;
+	margin-top: 38px;
+}
+/*add credits*/
+.card_content{
+	position:relative;
+	padding:2.8% 4.8%;
+
+}
+.card_input_div{
+	margin-bottom: 7px;
+}
+.card_input_title{
+	font-size: 1.5rem;
+	color: #616161;
+	line-height: 2.0;
+	font-weight: 600;
+}
+
+.card_input_control{
+	position:relative;
+	width: 96%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 1.6rem;
+	background: #FFFFFF;
+	border: 1px solid #DEDEDE;
+	border-radius: 3px;
+	padding: 0 2%;
+	color: #202020;
+}
+.card_input_day{
+	display: inline-block;
+	width: 24.5%;
+	margin-right: 10px;
+}
+.card_radio_btn{
+	position: relative;
+}
+.card_radio_btn > input[type='radio']{
+	display: none;
+}
+input[name='payDays']:checked +label{
+	.btn_big;
+	background: #F5A623;
+}
+input[name='payDays'] +label{
+	.btn_big(#F5A623);
+}
+
+input[name='payNums']:checked +label{
+	.btn_big;
+	background: #59A9ED;
+}
+input[name='payNums'] +label{
+	.btn_big(#59A9ED);
+}
+
+.card_btn_block{
+	display: block;
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	background: #CACACA;
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	text-align: center;
+}
+.card_btn_block.yellow{
+	background: #E5B968;
+}
+.card_content .card_btn_block{
+	margin-top: 30px;
+}
+.card_be_vip{
+	padding: 3.6% 17.6% 4.8%;
+	background: #fff;
+}
+.card_be_vip > img {
+	width: 90%;
+}
+/*become SVIP*/
+.card_open_div{
+	position: relative;
+}
+.card_be_title{
+	display: flex;
+	justify-content: center;
+	height: 46px;
+	line-height: 46px;
+	background: #ececec;
+}
+.card_be_title  .card_open_title{
+	flex:1;
+	text-align: center;
+	font-size: 1.6rem;
+	color: #616161;
+}
+.card_open_title.active{
+	position: relative;
+	background: #E5B968;
+	color: #ffffff;
+}
+.card_open_title.active:after{
+	position: absolute;
+	content: "";
+	border: 8px solid transparent;
+	border-top-color: #E5B968;
+	bottom: -16px;
+	left: 47%;
+}
+.check_read{
+	width: 20px;height: 20px;
+}
+.check_label{
+	vertical-align: super;
+	font-size: 1.5rem;
+	color: #616161;
+}
+input[type="radio"]+label.check_wx {
+	width: 120px;
+	height: 46px;
+	border: 1px solid #e8e6e6;
+	border-radius: 5px;
+	display: inline-block;
+	.bg_img('../img/wechat.png');
+}
+input[type="radio"] +label.check_zfb {
+	width: 120px;
+	height: 46px;
+	border: 1px solid #e8e6e6;
+	border-radius: 5px;
+	display: inline-block;
+	.bg_img('../img/alipay.png');
+}
+input[type="radio"]:checked + label.check_wx, input[type="radio"]:checked +label.check_zfb{
+	border: 3px solid #E5B968;
+}
+/*credit detail*/
+.card_plan_rule_box{
+	background: #ffffff;
+	margin-bottom: 10px;
+}
+.card_plan_rule{
+	height: 38px;
+	line-height: 38px;
+	.border_bt
+}
+.card_plan_rule .title{
+	position: relative;
+	padding-left: 14px;
+
+}
+.card_plan_rule .title:before{
+	content: "";
+	position: absolute;
+	top: -10px;
+	width: 5px;
+	left: 5px;
+	height: 29px;
+	background: #E5B968;
+}
+.card_plan_rule .detail{
+	position: relative;
+	float: right;
+	font-size: 1.4rem;
+	color: #616161;
+	padding-right: 25px;
+	line-height: 38px;
+}
+.card_plan_rule_box .plan_infos{
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	padding:3.5% 0;
+}
+.noplan_text{
+	font-size: 2.0rem;
+	color: #DEDEDE;
+	line-height: 2;
+	font-weight: 800;
+	margin: 10px 0;
+}
+.plan_w2{
+	flex: 2;
+}
+.plan_w1{
+	flex: 1;
+}
+.plan_infos >.plan_num{
+	margin-bottom: 20px;
+}
+.plan_infos > h2{
+	font-family: "dine";
+	font-size: 3.0rem;
+	color: #616161;
+	margin-top: 0.5rem;
+}
+.plan_infos > span >h4{
+	line-height: 2;
+}
+.plan_config{
+	display: flex;
+	padding:2% 0 5% 5%;
+	flex-wrap:wrap;
+}
+.plan_config > div{
+	width:50%;
+	width: 30%;
+	padding: 0 10% 5%;
+}
+.plan_success em{
+	font-family: dine;
+	color:@gray;
+	font-size: 2.8rem!important;
+}
+.plan_config h4{
+	line-height: 1.5;
+	.fs14fc94;
+}
+.plan_config  span{
+	font-family: dine;
+	font-size:  2.8rem;
+	color: #616161;
+	line-height: 32px;
+}
+.plan_config  em{
+	font-size:@fs12;
+}
+.card_operation{
+	display: flex;
+	padding:3.8% 0.5%;
+	background: #FFFFFF;
+	border: 1px solid #E4E4E4;
+}
+.card_operation > a:last-child{
+	border-right:none;
+}
+.card_operation > a{
+	flex:1;
+	font-size: 1.5rem;
+	color: #616161;
+	text-align: center;
+	border-right:1px solid  #EDEDED;
+}
+.card_btn_bottom{
+	position: fixed;
+	display: block;
+	width: 100%;
+	bottom:0;
+	background: #E5B968;
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 3.5%;
+}
+.card_send_check{
+	float: right;
+	color: #e2a33b;
+	font-size: 1.4rem;
+	margin-top: 15px;
+	background: transparent;
+}
+.pop_content{
+	width: 80%;
+	margin: 0 auto;
+	background: #ffffff;
+	top: 33%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+}
+.pop_inner{
+	padding:2.8% 6.0%
+}
+.pop_title{
+	font-size: 1.6rem;
+	color: #616161;
+	padding-left: 20px;
+	font-weight: 800;
+	line-height: 2;
+}
+.pop_word{
+	font-size: 1.6rem;
+	color: #616161;
+	line-height: 24px;
+}
+.pop_btns{
+	display: flex;
+	justify-content: center;
+}
+.pop_btns > a{
+	flex: 1;
+	text-align: center;
+	font-size: 1.6rem;
+	padding: 13px;
+}
+.pop_btn_red{
+	color: #ED4444;
+	border-bottom: 3px solid #ED4444;
+}
+.pop_btn_gary{
+	border-bottom: 3px solid #949494;
+}
+.card_btn:active{
+	background: #eee;
+}
+.btn_sm_yellow{
+	.btn_sm(#F5A623)
+}
+.btn_sm_blue{
+	.btn_sm(#59A9ED)
+}
+/*icons*/
+.mark_icon,.mine_credit_icon,.add_credit_icon,.ING_icon,.card_change_icon,.card_unbind_icon,.warm_icon{position: relative;}
+.warm_icon:before{
+	position: absolute;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	content: "";
+	.bg_img('../img/warming.png');
+	left: 0;
+	top: 25%;
+}
+.mark_icon:after{
+	position: absolute;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	content: "";
+	.bg_img('../img/help.png');
+	vertical-align: middle;
+	right: -22px;
+	top: 0;
+}
+.mine_credit_icon:before{
+	position: absolute;
+	display: inline-block;
+	width: 21px;
+	height: 16px;
+	content: "";
+	.bg_img('../img/xinyongka1.png');
+	left: 0;
+	vertical-align: middle;
+}
+.add_credit_icon:before{
+	position: absolute;
+	display: inline-block;
+	width: 21px;
+	height: 16px;
+	content: "";
+	.bg_img('../img/Combined.png');
+
+	vertical-align: middle;
+	left: 0;
+}
+.icon-arrow-right:before {
+	position: absolute;
+	content: "\e902";
+	width: 20px;
+	height: 20px;
+	color: #fff;
+	right: 14px;
+	transform: rotate(180deg) translate(-50%);
+	top: 50%;
+	margin-top: -10px;
+	font-size: 1.8rem;
+}
+
+.icon-arrow-s-right:before {
+	position: absolute;
+	content: "\e902";
+	width: 14px;
+	height: 14px;
+	color: #949494;
+	right: 14px;
+	transform: rotate(180deg) translate(-50%);
+	top: 65%;
+	/* margin-top: -10px; */
+	font-size: 1.4rem;
+}
+.ING_icon:before{
+	display: inline-block;
+	content:"";
+	width: 0;
+	height: 0;
+	color: #37C32E;
+	border: 5px solid transparent;
+	border-left: 5px solid #37C32E;
+}
+.STOP_icon:before{
+	display: inline-block;
+	content:"=";
+	width: 6px;
+	height: 8px;
+	color: #ED4444;
+	font-weight: 800;
+	transform: rotate(90deg);
+}
+.NOPLAN_icon:before{
+	display: inline-block;
+	content:"-";
+	width: 6px;
+	height: 8px;
+	color: #949494;
+	font-weight: 800;
+	padding-right: 5px;
+}
+.card_change_icon:before{
+	display: inline-block;
+	width:28px;
+	height: 28px;
+	content:"";
+	.bg_img('../img/change.png');
+	vertical-align: middle;
+	left: 0;
+	background-size: contain;
+}
+.card_unbind_icon:before{
+	display: inline-block;
+	width:28px;
+	height: 28px;
+	content:"";
+	background: url(../img/jiebang.png) no-repeat;
+	vertical-align: middle;
+	left: 0;
+	background-size: contain;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+	width: 0px;
+	height: 2px;
+	background-color: #f52152;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+/*
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.0);
+	border-radius: 5px;
+	background-color: #1828f5;
+}
+::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.0);
+	background-color: #555;
+}
+
+*/

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"我的还卡"})
+<body>
+	@@include('../../include/head.html',{"title":"我的还卡"})
+	<div class="box">
+	</div>
+	<script type="text/html" id="credits">
+		<section class="card_minecard">
+			<div class="card_cardinfo">
+				{{if vip}}
+					<a href="javascript:;">
+					  <img src="../../style/img/svipcard1.png" alt="" class="card_img">
+					</a>
+				{{else}}
+					<a href="./becomeSVIP.html">
+						<img src="../../style/img/putongcard.png" alt="" class="card_img">
+					</a>
+				{{/if}}
+
+				<div class="card_cardtext">
+					<span class="fs14fc94 mark_icon">认证抵扣金额</span>
+					<p class="card_deduction">10.00 <em class="fs15">元</em></p>
+					<span class="fs14fc94 mark_icon">手续费抵扣金额</span>
+					<p class="card_deduction">10.00 <em class="fs15">元</em></p>
+				</div>
+			</div>
+			<div class="credit_card">
+				<a href="" class="mine_credit mine_credit_icon">我的信用卡</a>
+				<a href="addCredits.html" class="add_credit add_credit_icon"> 添加信用卡</a>
+			</div>
+		</section>
+		<!--credits-->
+		<section class="credits_box">
+			{{if bank==''}}
+				<div class="credits_null">
+					<img src="../../style/img/pic.png" alt="">
+					<br>
+					<span class="no_credits">暂无信用卡</span>
+					<br>
+					<a href="addCredits.html" class="credits_add btn_hollow_yw">添加新卡</a>
+				</div>
+			{{else}}
+				{{each bank as value}}
+					<a class="credit_one wzbank" href="creditDetail.html">
+						<div class="credits_bank_name icon-arrow-right">
+							<div class="credits-img"><img src="../../style/img/yinlian.png" alt=""></div>
+							<div class="credits_bank_info">
+								<h3>{{value.name}}</h3>
+								<h4>**** **** **** *** {{value.last}}</h4>
+							</div>
+						</div>
+						<div class="credits_infos">
+							<p class="credit_date">
+								<span class="title">账单日：</span>{{value.account}}日
+								<span class="title">还款日：</span>{{value.bill}}日
+							</p>
+							<p class="credit_date">
+								<span class="title">还款计划：</span>X233231（还款号）
+								{{if value.status == 1}}
+									<span class="ING_icon right font-green">进行中</span>
+								{{else if value.status == 2}}
+									<span class="font-red right STOP_icon">已停止</span>
+								{{else if value.status == 3}}
+									<span class="NOPLAN_icon right fc61">无计划</span>
+								{{/if}}
+							</p>
+						</div>
+					</a>
+			    {{/each}}
+			{{/if}}
+
+		</section>
+</script>
+	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../../style/js/template-web.js"></script>
+	<script>
+	  var data = {
+		vip:false,
+		bank:[
+		  {name:'温州银行',status:1,last:'0426',account:'08',bill:'22'},
+		  {name:'温州银行',status:2,last:'0426',account:'08',bill:'22'},
+		  {name:'温州银行',status:3,last:'0426',account:'08',bill:'22'},
+		]
+	  };
+		var credits_html = template('credits',data);
+		$('.box').html(credits_html);
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加银行卡</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >添加银行卡</div>
+	</header>
+	<div class="contents-wrapper">
+	<div class="noticeYellow">请修改用户姓名名下的银行卡信息</div>
+	<div class="form-controls">
+		<span class="title">持卡人</span>
+		<input class="form-input" type="text"  value='用户姓名' />
+	</div>
+	<div class="form-controls">
+		<span class="title">身份证号</span>
+		<input class="form-input" type="text"  value='330******1234123' />
+	</div>
+		<div class="form-controls">
+			<span class="title">卡号</span>
+			<input class="form-input" type="text"  placeholder='请输入银行卡号' />
+		</div>
+		<div class="form-controls">
+			<span class="title">手机号</span>
+			<input class="form-input" type="tel"  placeholder='请输入银行预留手机号' />
+		</div>
+	<div class="btn btn-bg-green next-btn" >确认</div>
+
+</div>
+</body>
+</html>

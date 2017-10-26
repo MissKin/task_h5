@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<link rel="stylesheet" href="../style/css/swiper.min.css">
+	<title>我的乐伴</title>
+	<style>
+		html,body{
+			height: 100%;
+			background: #f1f1f1;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >我的乐伴</div>
+	</header>
+	<div class="partner-top-wrapper gradient-green">23    </div>
+	<section class="content-margin-top partner-content">
+		<ul>
+			<li class="partner-item" v-for="item in partner">
+				<p class="name">crowdel</p>
+				<div class="icon-phone tel">12345687954568</div>
+			</li>
+			<li class="partner-item" v-for="item in partner">
+				<p class="name">crowdel</p>
+				<div class="icon-phone tel">12345687954568</div>
+			</li>
+		</ul>
+	</section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('../../include/headTag.html',{"title":"卡片修改"})
+<link rel="stylesheet" href="../../style/css/a.css">
+<body>
+	@@include('../../include/head.html',{"title":"卡片修改"})
+	<section class="card_content">
+		<div class="card_input_div">
+			<div class="card_input_title">信用卡号码：231901789109181</div>
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">信用卡有效期：兴业银行</div>
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">持卡人姓名：马云</div>
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">账单日：</div>
+			<input type="text" class="card_input_control card_input_day" placeholder="输入日期">日
+		</div>
+		<div class="card_input_div">
+			<div class="card_input_title">还款日：</div>
+			<input type="text" class="card_input_control card_input_day" onchange="isFill()" placeholder="输入日期">日
+		</div>
+		<div class="card_btn_block yellow">修改</div>
+		<p class="head">less</p>
+	</section>
+	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script>
+		function isFill(){
+		  inputCtr = $('.card_input_control');
+		  console.dir(inputCtr.length);
+		  for( let i=0,len=inputCtr.length; i< len; i++){
+			 if($(inputCtr[i]).val() == ""){
+			   console.log($(inputCtr[i]).val())
+			   $('.card_btn_block').removeClass('yellow')
+			   alert('请填充完整');
+			   break;
+			 }else{
+				$('.card_btn_block').addClass('yellow')
+			 }
+		  }
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../style/css/reset.css">
+	<link rel="stylesheet" href="../style/css/base.css">
+	<link rel="stylesheet" href="../style/css/font.css">
+	<link rel="stylesheet" href="../style/css/app.css">
+	<title>面对面开通</title>
+	<style>
+		body,html{
+			background: #F1F1F1;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="gradient-green c-header">
+		<a class="c-back font-white" onclick="history.go(-1)"><i class="icon-backicon"></i></a>
+		<div class="c-header-text" >面对面开通</div>
+	</header>
+	<div class="face-wrapper">
+		<div class="noticeYellow">
+			替好友开通后，系统默认关联在您的名下
+		</div>
+		<div class="form-controls">
+			<span class="title">手机号码</span>
+			<input class="form-input" type="tel"  placeholder='请输入对方手机号' />
+		</div>
+		<form-input title="手机号码" input_type="tel"  v-model="phone" place_str="请输入对方手机号"></form-input>
+		<div class="form-controls">
+			<span class="title">验证码</span>
+			<input class="form-input" style="width: 88px" type="text" placeholder='输入验证码' />
+			<button class="timerbtn green" onclick="timer(this,3)" >获取验证码</button>
+		</div>
+		<!--验证码的input框-->
+		<form-input-timer ref="forminputtimer" title="验证码" place_str="输入验证码" :disableded="disableded" v-on:run="sendCode"></form-input-timer>
+		<div class="form-controls">
+			<span class="title">对方密码</span>
+			<input class="form-input"  type="password"  placeholder='请设置对方的密码' />
+		</div>
+		<div class="btn btn-bg-green register-btn">注册</div>
+	</div>
+	<script src="../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../style/js/util.js"></script>
+</body>
+</html>
