@@ -42,11 +42,11 @@
 				</div>
 			{{else}}
 				{{each bank as value}}
-					<a class="credit_one wzbank" href="creditDetail.html">
+					<a class="credit_one yellow_bank" href="creditDetail.html">
 						<div class="credits_bank_name icon-arrow-right">
 							<div class="credits-img"><img src="../../style/img/yinlian.png" alt=""></div>
 							<div class="credits_bank_info">
-								<h3>{{value.name}}</h3>
+								<h3 class="bank_name">{{value.name}}</h3>
 								<h4>**** **** **** *** {{value.last}}</h4>
 							</div>
 						</div>
@@ -75,16 +75,102 @@
 	<script src="../../style/js/jquery-3.1.1.min.js"></script>
 	<script src="../../style/js/template-web.js"></script>
 	<script>
+		var banks ={
+		  'ICBC':'工商银行',
+		  'ABC':'农业银行',
+		  'BOC':'中国银行',
+		  'CCB':'建设银行',
+		  'CMB':'招商银行',
+		  'BOCM':'交通银行',
+		  'CMBC':'民生银行',
+		  'CNCB':'中信银行',
+		  'CEBB':'光大银行',
+		  'CIB':'兴业银行',
+		  'BOB':'北京银行',
+		  'GCB':'广发银行',
+		  'HXB':'华夏银行',
+		  'PSBC':'邮储银行',
+		  'SPDB':'浦发银行',
+		  'PAB':'平安银行',
+		  'BOS':'上海银行',
+		  'BOHC':'渤海银行',
+		  'BOJ':'江苏银行'
+		}
 	  var data = {
 		vip:false,
 		bank:[
-		  {name:'温州银行',status:1,last:'0426',account:'08',bill:'22'},
-		  {name:'温州银行',status:2,last:'0426',account:'08',bill:'22'},
-		  {name:'温州银行',status:3,last:'0426',account:'08',bill:'22'},
-		]
+		  {name:'ICBC',status:1,last:'0426',account:'08',bill:'22',},
+		  {name:'GCB',status:2,last:'0426',account:'08',bill:'22'},
+		  {name:'CMB',status:3,last:'0426',account:'08',bill:'22'},
+		],
+	    bankname:{
+		  'ICBC':'工商银行',
+		  'ABC':'农业银行',
+		  'BOC':'中国银行',
+		  'CCB':'建设银行',
+		  'CMB':'招商银行',
+		  'BOCM':'交通银行',
+		  'CMBC':'民生银行',
+		  'CNCB':'中信银行',
+		  'CEBB':'光大银行',
+		  'CIB':'兴业银行',
+		  'BOB':'北京银行',
+		  'GCB':'广发银行',
+		  'HXB':'华夏银行',
+		  'PSBC':'邮储银行',
+		  'SPDB':'浦发银行',
+		  'PAB':'平安银行',
+		  'BOS':'上海银行',
+		  'BOHC':'渤海银行',
+		  'BOJ':'江苏银行'
+		}
 	  };
 		var credits_html = template('credits',data);
 		$('.box').html(credits_html);
+
+		//银行名字
+		function getBankName(){
+		  var arr_texts=[],arr_codes=[];
+		  var arr_code = $('.bank_name');
+		  //循环获取银行的名称
+		  for(var i = 0,len=arr_code.length; i< len; i++){
+			arr_texts.push($(arr_code[i]).text());
+			arr_codes.push(banks[arr_texts[i]]);
+			//页面文字替换
+			$(arr_code[i]).html(arr_codes[i]);
+		  }
+		  //获取银行对应的背景色
+		  getBankColor(arr_texts);
+		}
+		/*
+		* @params arr 获取银行的代号
+		* */
+		function getBankColor(arr){
+		  var arr_box = $('.credit_one');
+		  var arr_colors = [];
+		  //正则匹配 银行的代号和对应的背景色
+		  var red_reg = /ICBC|BOC|CMB|CNCB|GCB|HXB|BOB/ig;
+		  var green_reg = /ABC|CMBC|PSBC|BOHC/ig;
+		  var blue_reg = /CCB|BOCM|CIB|SPDB|/ig;
+		  var yelloe_reg = /CEBB|BOS|BOJ/ig;
+		  //遍历 .credit_one 将对应的颜色 通过 addClass 添加到页面
+		  $(arr_box).each(function(i){
+			if(red_reg.test(arr[i])){
+			    /*alert('对的')*/
+			  arr_colors.push('red')
+			}else if(green_reg.test(arr[i])){
+			  arr_colors.push('green')
+			}else if(blue_reg.test(arr[i])){
+			  arr_colors.push('blue')
+			}else if(yelloe_reg.test(arr[i])){
+			  arr_colors.push('yellow')
+			}
+		  });
+		  for(var j=0,len=arr_colors.length; j<len; j++){
+		    $(arr_box[j]).addClass(arr_colors[j]+'_bank');
+		  }
+		}
+		getBankName();
 	</script>
 </body>
 </html>

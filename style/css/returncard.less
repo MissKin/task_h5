@@ -62,7 +62,13 @@
 	padding-left: 4.5%;
 	text-align: left;
 }
-
+.content-top{
+	position:relative;
+	top:46px
+}
+.mt_46{
+	margin-top: 46px;
+}
 body,html{
 	height: 100%;
 	background: #EDEDED;
@@ -92,7 +98,15 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 	position: relative;
 	height: 100%;
 }
-.c-header{    background: #ffffff;border-bottom: 1px solid #E4E4E4;}
+.c-header{
+	background: #ffffff;border-bottom: 1px solid #E4E4E4;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 55;
+}
 .search-box-input {
 	position: absolute;
 	width: 66%;
@@ -137,7 +151,9 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 	display: flex;
 	flex-direction: column;
 	-webkit-box-orient: vertical;
-	height: calc(~"100% - 45px");
+	height: calc(~"100% - 46px");
+	top: 46px;
+	position: relative;
 }
 .card_minecard{
 	position: relative;
@@ -185,11 +201,17 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 	padding-bottom:2px;
 	margin-bottom: 14px;
 }
-.wzbank{
+.yellow_bank{
 	.bankbg(#EBB13A,#E2941D,5px)
 }
-.jtbank{
+.blue_bank{
 	.bankbg(#4F74AF,#36588F,5px)
+}
+.green_bank{
+	.bankbg(#3F8988,#25615F,5px)
+}
+.red_bank{
+	.bankbg(#B93947,#DB4557,5px)
 }
 .credits_bank_name{
 	position: relative;
@@ -300,6 +322,7 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 	}
 }
 .schedule_box{
+	.mt_46;
 	padding:14px 12px;
 	background: #F8E9CF;
 	border-top: 1px solid #EECD94;
@@ -383,8 +406,8 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 }
 /*add credits*/
 .card_content{
-	position:relative;
 	padding:2.8% 4.8%;
+	.content-top;
 
 }
 .card_input_div{
@@ -455,6 +478,7 @@ input[name='payNums'] +label{
 .card_be_vip{
 	padding: 3.6% 17.6% 4.8%;
 	background: #fff;
+	.mt_46;
 }
 .card_be_vip > img {
 	width: 90%;
