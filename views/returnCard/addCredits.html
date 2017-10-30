@@ -18,11 +18,12 @@
 		</div>
 		<div class="card_input_div">
 			<div class="card_input_title">账单日：</div>
-			<input type="text" class="card_input_control card_input_day" placeholder="输入日期">日
+			<input type="text" class="card_input_control card_input_day state-hook"readonly value="输入日期">日
 		</div>
 		<div class="card_input_div">
 			<div class="card_input_title">还款日：</div>
-			<input type="text" class="card_input_control card_input_day" onchange="isFill()" placeholder="输入日期">日
+			<input type="text" class="card_input_control card_input_day repay-hook" onchange="isFill()"
+			       placeholder="输入日期">日
 		</div>
 		<div class="card_btn_block ">+ 添加新卡</div>
 	</section>
@@ -45,6 +46,7 @@
 		</ul>
 	</section>
 	<script src="../../style/js/jquery-3.1.1.min.js"></script>
+	<script src="../../style/js/jquery.setDay.js"></script>
 	<script>
 		function isFill(){
 		  inputCtr = $('.card_input_control');
@@ -78,6 +80,14 @@
 			return;
 		  }
 		}
+	</script>
+	<script>
+		$('.state-hook').click(function(){
+		  $(this).$setDay();
+		});
+		$('.repay-hook').click(function () {
+		  $(this).$setDay();
+		})
 	</script>
 </body>
 </html>

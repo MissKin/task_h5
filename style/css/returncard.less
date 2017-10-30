@@ -15,6 +15,9 @@
 .border_bt(@color:#E4E4E4){
 	border-bottom: 1px solid #E4E4E4;
 }
+.border_bt4(@height:3px,@color:#949494){
+	border-bottom:@height solid @color;
+}
 .border_btE4{
 	border-bottom: 1px solid #E4E4E4;
 }
@@ -85,6 +88,10 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 	font-size: 1.4rem;
 	color: #949494;
 }
+.fs16fc94{
+	font-size: 1.6rem;
+	color: #949494;
+}
 .fs16fc61{
 	font-size: 16px;
 	color: #616161;
@@ -137,6 +144,7 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 	color: #DDBD84;
 }
 .notice {
+	position: relative;
 	height: 40px;
 	background: #F9E9CF;
 	 border: none;
@@ -144,6 +152,7 @@ em{font-style: normal;    font-family: microsoft YaHei;}
 	color: #E2A33B;
 	line-height: 40px;
 	padding-left: 8px;
+	top: 46px;
 }
 
 .box{
@@ -662,8 +671,10 @@ input[type="radio"]:checked + label.check_wx, input[type="radio"]:checked +label
 	float: right;
 	color: #e2a33b;
 	font-size: 1.4rem;
-	margin-top: 15px;
 	background: transparent;
+}
+.search-wrapper{
+	z-index:56;
 }
 .pop_content{
 	width: 80%;
@@ -714,6 +725,70 @@ input[type="radio"]:checked + label.check_wx, input[type="radio"]:checked +label
 }
 .btn_sm_blue{
 	.btn_sm(#59A9ED)
+}
+/*date plugin*/
+.date_box{
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	position: fixed;
+	background:#ffffff;
+	padding-top: 10px;
+
+}
+.date_mask{
+	/*-webkit-animation:;
+	-o-animation:;*/
+	animation: show 0.5s ease ;
+}
+
+@keyframes show {
+	0%{
+		opacity:0;
+		transform: translateY(375px);
+
+	}
+	100%{
+		opacity:1;
+		transform: translateY(0);
+
+	}
+}
+.date_number_box{
+	display:flex;
+	flex-wrap:wrap;
+}
+.date_number_box li{
+	width: 9%;
+	margin: 2.5%;
+	text-align: center;
+	height: 0;
+	padding-bottom: 9%;
+	line-height: 34px;
+	border-radius: 50%;
+
+	.fs16fc61;
+}
+.date_number_box li.active{
+	background:#E5B968;
+	color:#fff;
+}
+.date_btns{
+	display:flex;
+	justify-content:center;
+}
+.date_btns > a{
+	flex:1;
+	.fs16fc94;
+	line-height: 30px;
+	text-align: center;
+}
+.date_btns .date_cancel{
+	.border_bt4;
+}
+.date_btns .date_ok{
+	.border_bt4(@color:#E5B968);
+
 }
 /*icons*/
 .mark_icon,.mine_credit_icon,.add_credit_icon,.ING_icon,.card_change_icon,.card_unbind_icon,.warm_icon{position: relative;}
